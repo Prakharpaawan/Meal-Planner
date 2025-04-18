@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Meal Planner - Weekly Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <h1>Fresh Meal Planner</h1>
+        </div>
+        <div class="dark-mode-toggle">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="planner.html"><i class="fas fa-calendar-alt"></i> Meal Planner</a></li>
+            <li><a href="meals.html"><i class="fas fa-hamburger"></i> Meal Options</a></li>
+            <li><a href="shopping.html"><i class="fas fa-shopping-cart"></i> Shopping List</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-calendar-alt"></i> Weekly Meal Planner</h2>
+            <p>Plan your meals for the week ahead. Choose from available meal options for each day.</p>
+        </div>
+        
+        <div class="card">
+            <form id="meal-planner-form">
+                <table class="meal-planner-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Breakfast</th>
+                            <th>Lunch</th>
+                            <th>Dinner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Monday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="monday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="monday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="monday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Tuesday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="tuesday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="tuesday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="tuesday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Wednesday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="wednesday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="wednesday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="wednesday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Thursday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="thursday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="thursday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="thursday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Friday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="friday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="friday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="friday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Saturday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="saturday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="saturday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="saturday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="day-cell">
+                                <i class="fas fa-calendar-day"></i> Sunday
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="sunday" data-meal="breakfast">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="sunday" data-meal="lunch">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="meal-select" data-day="sunday" data-meal="dinner">
+                                    <option value="">Select a meal</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="action-buttons">
+                    <button type="button" id="save-plan-btn"><i class="fas fa-save"></i> Save Meal Plan</button>
+                    <button type="button" id="generate-shopping-btn"><i class="fas fa-list"></i> Generate Shopping List</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Fresh Meal Planner | Eat Well, Live Better</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

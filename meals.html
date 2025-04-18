@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Meal Planner - Meal Options</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <h1>Fresh Meal Planner</h1>
+        </div>
+        <div class="dark-mode-toggle">
+            <span>Dark Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="planner.html"><i class="fas fa-calendar-alt"></i> Meal Planner</a></li>
+            <li><a href="meals.html"><i class="fas fa-hamburger"></i> Meal Options</a></li>
+            <li><a href="shopping.html"><i class="fas fa-shopping-cart"></i> Shopping List</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h2><i class="fas fa-hamburger"></i> Meal Options</h2>
+            <p>Browse our collection of meal options from different cuisines to add to your meal plan.</p>
+        </div>
+        
+        <div class="cuisine-tabs">
+            <button class="cuisine-tab active" data-cuisine="all">All Cuisines</button>
+            <button class="cuisine-tab" data-cuisine="indian"><i class="fas fa-pepper-hot"></i> Indian</button>
+            <button class="cuisine-tab" data-cuisine="chinese"><i class="fas fa-yin-yang"></i> Chinese</button>
+            <button class="cuisine-tab" data-cuisine="italian"><i class="fas fa-pizza-slice"></i> Italian</button>
+            <button class="cuisine-tab" data-cuisine="mexican"><i class="fas fa-hat-cowboy"></i> Mexican</button>
+            <button class="cuisine-tab" data-cuisine="american"><i class="fas fa-flag-usa"></i> American</button>
+        </div>
+        
+        <div class="meal-type-filter">
+            <label>Filter by:</label>
+            <button class="meal-type-btn active" data-type="all">All</button>
+            <button class="meal-type-btn" data-type="breakfast">Breakfast</button>
+            <button class="meal-type-btn" data-type="lunch">Lunch</button>
+            <button class="meal-type-btn" data-type="dinner">Dinner</button>
+        </div>
+        
+        <div class="meals-container" id="meal-options">
+            <!-- Meal options will be populated here by JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Fresh Meal Planner | Eat Well, Live Better</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

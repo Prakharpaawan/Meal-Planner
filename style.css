@@ -1,0 +1,677 @@
+/* === BASE STYLES === */
+:root {
+    --primary-color: #4aa329;
+    --primary-hover: #5ee126;
+    --accent-color: #ff6b6b;
+    --text-color: #333;
+    --bg-color: #f5f7fa;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --input-bg: #fff;
+    --delete-color: #f44336;
+    --header-bg: linear-gradient(135deg, #5b874b, #3a6a3a);
+    --footer-bg: #333;
+    --footer-text: #fff;
+  }
+  
+  .dark-mode {
+    --text-color: #e0e0e0;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --input-bg: #2d2d2d;
+    --header-bg: linear-gradient(135deg, #3a5e2e, #234223);
+    --footer-bg: #0a0a0a;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* === HEADER === */
+  header {
+    background: var(--header-bg);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo i {
+    font-size: 1.4rem;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  /* Dark mode toggle */
+  .dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  /* === NAVIGATION === */
+  nav {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  nav li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.7rem;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    background-color: rgba(91, 135, 75, 0.15);
+    color: var(--primary-color);
+  }
+  
+  /* === HERO SECTION === */
+  .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('https://source.unsplash.com/1600x900/?healthy-food');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    opacity: 0.9;
+  }
+  
+  .cta-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+  }
+  
+  /* === FEATURES === */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.3rem;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .feature-icon {
+    background-color: var(--primary-color);
+    color: white;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+  }
+  
+  .feature-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+  }
+  
+  .feature-card p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  .feature-card button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .feature-card button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  /* === TESTIMONIAL === */
+  .testimonial {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 1.3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .quote {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    opacity: 0.3;
+    margin-bottom: 0.8rem;
+  }
+  
+  .testimonial p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+  }
+  
+  .testimonial .user {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* === CONTAINER === */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.3rem 1rem;
+    flex: 1;
+  }
+  
+  .page-header {
+    margin-bottom: 1.3rem;
+    text-align: center;
+  }
+  
+  .page-header h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.4rem;
+  }
+  
+  .page-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* === MEAL PLANNER === */
+  .meal-planner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .meal-planner-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem;
+    text-align: left;
+  }
+  
+  .meal-planner-table td {
+    padding: 0.7rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .meal-planner-table tr:hover {
+    background-color: rgba(91, 135, 75, 0.05);
+  }
+  
+  .day-cell {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  .meal-select {
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 1.3rem;
+  }
+  
+  /* === MEAL OPTIONS === */
+  .cuisine-tabs {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding: 0.7rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .cuisine-tab {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .cuisine-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  .meal-type-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-type-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+  
+  .meal-type-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .meal-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+  }
+  
+  .meal-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .meal-img {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .meal-content {
+    padding: 0.9rem;
+  }
+  
+  .meal-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+  }
+  
+  .meal-cuisine {
+    display: inline-block;
+    background-color: rgba(91, 135, 75, 0.1);
+    color: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .meal-type {
+    display: inline-block;
+    background-color: rgba(255, 107, 107, 0.1);
+    color: var(--accent-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-left: 0.4rem;
+  }
+  
+  .meal-ingredients {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .meal-ingredients h4 {
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .meal-ingredients ul {
+    padding-left: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .add-meal-btn {
+    width: 100%;
+    margin-top: 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+  
+  .add-meal-btn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  /* === SHOPPING LIST === */
+  .shopping-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .shopping-actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  
+  .shopping-input-group {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .shopping-input-group input {
+    flex: 1;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  .shopping-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .category-list {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 0.8rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .category-list h4 {
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-color);
+  }
+  
+  .category-items {
+    list-style: none;
+  }
+  
+  .category-items li {
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .category-items li:last-child {
+    border-bottom: none;
+  }
+  
+  .delete-item {
+    color: var(--delete-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+  }
+  
+  /* === FOOTER === */
+  footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1.1rem;
+    margin-top: auto;
+  }
+  
+  /* === BUTTONS === */
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+  
+  button.secondary-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  button.secondary-btn:hover {
+    background-color: rgba(91, 135, 75, 0.1);
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+    
+    .hero-section {
+      padding: 3rem 1rem;
+    }
+    
+    .hero-section h2 {
+      font-size: 1.8rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+    
+    .shopping-header, .shopping-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  /* === ANIMATIONS === */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  /* === STATUS MESSAGE === */
+  .status-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  .status-message.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
