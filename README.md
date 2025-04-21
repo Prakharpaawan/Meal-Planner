@@ -2,7 +2,8 @@
 # 🍏 Fresh Meal Planner 🍽️  
 ### _Plan your meals, simplify your life!_  
 
-![App Screenshot](https://source.unsplash.com/1200x800/?meal-planner,food)  
+![App Screenshot](![image](https://github.com/user-attachments/assets/ff39abf6-3e0f-4250-a411-8035cc7bca44)
+)  
 
 ---
 
